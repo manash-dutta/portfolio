@@ -1,0 +1,480 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Reset and Common Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+  font-family: Jost, sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-heading {
+  font-size: 5rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-bottom: 15rem;
+  border-bottom: 0.3rem solid #333;
+  text-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+/* Landing Page */
+.landing {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(255 255 255 / 10%), rgba(255 255 255 / 20%)),
+    url(images/landing-bg.jpg) center no-repeat;
+  background-size: cover;
+  flex-direction: column;
+}
+
+.landing-heading {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #eee;
+  background-color: #7d8a5c;
+  padding-inline: 3rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  border-bottom: 0.3rem solid #eee;
+  text-shadow: 0.2rem 0.2rem 1rem #555;
+  transform: skew(-10deg);
+}
+
+.profile-img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 0.7rem dotted #7d8a5c;
+  background-color: rgba(255 255 255 / 70%);
+  padding: 0.5rem;
+  opacity: 0.9;
+}
+
+.profile-name {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #ff736a;
+  background-color: #7d8a5c;
+  margin-block: 5rem;
+  padding: 0.5rem 3rem;
+  letter-spacing: 0.3rem;
+  transform: skew(-10deg);
+}
+
+.projects-btn {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #eee;
+  /* border-bottom: 0.3rem solid #333; */
+  padding: 0.5rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  border-radius: 100vh;
+  box-shadow: inset 0 0.2rem 1rem 0.5rem rgba(0 0 0 / 40%),
+    0 0.5rem 1rem 1rem rgba(0 0 0 / 30%);
+}
+
+.projects-btn:hover {
+  filter: brightness(110%);
+}
+
+.projects-btn:active {
+  transform: translateY(0.1rem);
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 4rem;
+  background-color: #7d8a5c;
+  box-shadow: 0.2rem 0.2rem 0.5rem #555;
+  gap: 2rem;
+  z-index: 108;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.navbar-link {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+.change.navbar-link {
+  color: #eee;
+}
+
+.navbar-link:hover {
+  color: #eee;
+}
+
+.navbar-link::before {
+  content: "";
+  width: 0;
+  height: 0.2rem;
+  background-color: #eee;
+  position: absolute;
+  right: -15%;
+  bottom: -0.3rem;
+  transition: width 0.2s ease-in-out;
+}
+
+.change.navbar-link::before {
+  width: 130%;
+}
+
+.navbar-link:hover::before {
+  width: 130%;
+}
+
+/* About Me Section */
+.about-me {
+  width: 100%;
+  height: 100%;
+  padding: 15rem 0 10rem 0;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-bars-container {
+  margin-bottom: 10rem;
+}
+
+.progress-bar {
+  max-width: 60rem;
+  width: 90vw;
+  height: 3rem;
+  background-color: #ccc;
+  margin-block: 1.5rem;
+  border-radius: 100vh;
+  box-shadow: 0.2rem 0.2rem 1rem #555;
+  position: relative;
+}
+
+.progress-text {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+.progress-text span {
+  margin-inline: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.progress-percent {
+  height: 100%;
+  width: 0;
+  background-color: #7d8a5c;
+  border-radius: 100vh;
+  transition: width 1s 0.5s ease-in-out;
+}
+
+.services {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.service {
+  text-align: center;
+}
+
+.service:first-child,
+.service:last-child {
+  align-self: self-start;
+}
+
+.service i {
+  font-size: 10rem;
+  color: #888;
+  margin-bottom: 2rem;
+  text-shadow: 0.1rem 0.1rem 0.5rem #555;
+}
+
+.service h2 {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #777;
+  width: 25rem;
+  letter-spacing: 0.3rem;
+  transform: skew(-10deg);
+  box-shadow: 0.2rem 0.2rem 0.5rem #555;
+}
+
+/* Projects Section */
+.projects {
+  width: 100%;
+  height: 100%;
+  padding-block: 10rem;
+  background-color: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-container {
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  box-shadow: 0.3rem 0.3rem 0.5rem #777;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3rem;
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.project:hover {
+  box-shadow: 1rem 1rem 1rem #777;
+}
+
+.project-text {
+  text-align: center;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  top: -10rem;
+  transition: top 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.project:hover .project-text {
+  top: 5rem;
+  transition: top 0.3s 0.3s;
+}
+
+.project-name {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #333;
+}
+
+.project-technologies {
+  font-size: 1.8rem;
+  color: #7d8a5c;
+}
+
+.project-img {
+  width: 40rem;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project:hover .project-img {
+  opacity: 0.2;
+}
+
+.project-link {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  letter-spacing: 0.1rem;
+  background-color: #7d8a5c;
+  box-shadow: inset 0.2rem 0.5rem 0.3rem rgba(0 0 0 / 30%),
+    0.5rem 1rem 1rem rgba(0 0 0 / 40%);
+  padding: 0.3rem 1rem;
+  border-radius: 100vh;
+  position: absolute;
+  bottom: -5rem;
+  transition: bottom 0.3s ease-in-out;
+}
+
+.project:hover .project-link {
+  bottom: 5rem;
+  transition: bottom 0.3s 0.3s;
+}
+
+.project-link:hover {
+  filter: brightness(110%);
+}
+
+/* Contact Me Section */
+.contact {
+  width: 100%;
+  height: 70vh;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact-heading {
+  color: #eee;
+  box-shadow: none;
+  border-color: #eee;
+  margin-bottom: 5rem;
+}
+
+.contact-form {
+  max-width: 50rem;
+  width: 90vw;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-block: 0.5rem;
+  background-color: #eee;
+  font-size: 1.5rem;
+  border: 0.2rem solid #7d8a5c;
+  color: #555;
+}
+
+.contact-form textarea {
+  min-height: 10rem;
+  max-height: 20rem;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.contact-form .contact-form-btn {
+  background-color: #7d8a5c;
+  color: #eee;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Footer Section  */
+.social {
+  width: 100%;
+  height: 30vh;
+  background-color: #222;
+  flex-direction: column;
+}
+
+.social-media {
+  margin-bottom: 5rem;
+}
+
+.social-media-link {
+  margin-inline: 2rem;
+  padding: 1rem 1.3rem;
+  background-color: #7d8a5c;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s;
+}
+
+.social-media-link:hover {
+  background-color: #eee;
+}
+
+.social-media-link i {
+  font-size: 3rem;
+  color: #eee;
+  transition: color 0.5s;
+}
+
+.social-media-link:hover i {
+  color: #7d8a5c;
+}
+
+.copyright {
+  color: #aaa;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+/* Adding Responsiveness */
+@media (max-width: 1200px) {
+  .services {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .service {
+    margin: 3rem 2rem;
+  }
+
+  .contact {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .landing-heading {
+    font-size: 5rem;
+  }
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 600px) {
+  .landing-heading {
+    font-size: 3rem;
+  }
+
+  .navbar-link {
+    font-size: 1.5rem;
+  }
+
+  .about-me-heading {
+    margin-bottom: 10rem;
+  }
+
+  .project-img {
+    width: 100%;
+  }
+
+  .section-heading {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 350px) {
+  .landing-heading {
+    font-size: 2rem;
+  }
+}
